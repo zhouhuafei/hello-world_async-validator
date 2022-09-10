@@ -1,11 +1,7 @@
 {
-  "name": "npm-publish-ts",
-  "version": "0.0.0",
-  "description": "npm-publish-ts",
-  "main": "./dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "name": "hello-world_async-validator",
+  "version": "1.0.0",
+  "private": true,
   "engines": {
     "node": "14.19.1",
     "npm": "6.14.16"
@@ -23,18 +19,8 @@
     "dev": "npm run del && npm run gulpDev",
     "build": "npm run del && npm run gulpBuild && npm run ts2dts && npm run test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhouhuafei/npm-publish-ts.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zhouhuafei/npm-publish-ts/issues"
-  },
-  "homepage": "https://github.com/zhouhuafei/npm-publish-ts#readme",
   "dependencies": {
+    "async-validator": "^4.2.5",
     "zhf.sku": "^1.0.2"
   },
   "devDependencies": {
