@@ -52,8 +52,8 @@ async function save () {
     name: '商品名称',
     weight: 5,
     specifications: [
-      { id: 11, value: '红色' },
-      { id: 12, value: '蓝色' }
+      { id: 11, name: '红色', inventory: 2 },
+      { id: 12, name: '蓝色', inventory: 2 }
     ]
   })
   const editRes = await validationTrigger(formFields, formRules)
