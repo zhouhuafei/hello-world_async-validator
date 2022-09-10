@@ -9,5 +9,8 @@ module.exports = {
     'standard',
     'plugin:@typescript-eslint/recommended'
   ],
-  rules: {}
+  // 'off' | 'warn' | 'error'
+  rules: {
+    'node/no-callback-literal': 'off'
+  }
 }

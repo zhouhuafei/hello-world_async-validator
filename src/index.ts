@@ -24,9 +24,9 @@ const formRules: Rules = {
         const max = 9
         const min = 1
         if (value > max) {
-          return cb(new Error(`重量不能大于${max}`).message)
+          return cb(`重量不能大于${max}`)
         } else if (value < min) {
-          return cb(new Error(`重量不能小于${min}`).message)
+          return cb(`重量不能大于${max}`)
         }
         cb()
       }
