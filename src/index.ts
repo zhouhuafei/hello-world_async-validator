@@ -49,7 +49,18 @@ const formRules: Rules = {
     const type = 'array' // 不配置这个则min和max校验通不过
     return [
       { type, required: true, message: '规格必填' },
-      { type, min, max, message: `至少${min}个规格 至多${max}个规格` }
+      { type, min, max, message: `至少${min}个规格 至多${max}个规格` },
+      {
+        type,
+        defaultField: {
+          type: 'object',
+          fields: {
+            inventory: [
+              { type: 'number', required: true, message: '库存必填' }
+            ]
+          }
+        }
+      }
     ]
   })()
 }
@@ -86,3 +97,6 @@ async function save () {
 }
 
 save().then()
+
+// ...TODO 如何只校验某一个字段？ - 摘取规则中的某一项？
+// ...TODO 如何只校验数组中对象的某一个字段？ - 怎么摘取？
