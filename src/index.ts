@@ -1,4 +1,4 @@
-import { validationTrigger, Rules } from './async-validator'
+import { validateAllFormFields, Rules } from './async-validator'
 
 const formFields = {
   id: undefined,
@@ -74,7 +74,7 @@ const formRules: Rules = {
 async function save () {
   console.log('')
   console.log('模拟进入新增页，未进行任何操作，直接点击保存按钮')
-  const addRes = await validationTrigger(formFields, formRules)
+  const addRes = await validateAllFormFields(formFields, formRules)
   console.log('被校验的数据', formFields)
   if (addRes) {
     console.log('校验未通过', addRes)
@@ -94,7 +94,7 @@ async function save () {
       { id: 13, name: '紫色', inventory: 9 }
     ]
   })
-  const editRes = await validationTrigger(formFields, formRules)
+  const editRes = await validateAllFormFields(formFields, formRules)
   console.log('被校验的数据', formFields)
   if (editRes) {
     console.log('校验未通过', editRes)
