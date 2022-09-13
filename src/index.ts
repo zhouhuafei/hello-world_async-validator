@@ -76,7 +76,7 @@ async function save () {
   console.log('模拟进入新增页，未进行任何操作，直接点击保存按钮')
   formErrors = await validateAllFormFields(formFields, formRules)
   console.log('被校验的数据', formFields)
-  if (formErrors) {
+  if (Object.keys(formErrors).length) {
     console.log('校验未通过', formErrors)
   } else {
     console.log('校验通过')
@@ -96,7 +96,7 @@ async function save () {
   })
   formErrors = await validateAllFormFields(formFields, formRules)
   console.log('被校验的数据', formFields)
-  if (formErrors) {
+  if (Object.keys(formErrors).length) {
     console.log('校验未通过', formErrors)
   } else {
     console.log('校验通过')
@@ -110,13 +110,13 @@ async function save () {
   const tempFormRules = { [tempName]: getInventoryRule() }
   const tempFormErrors = await validateAllFormFields(tempFormFields, tempFormRules)
   console.log('单独被校验的数据', tempFormFields)
-  if (tempFormErrors) {
+  if (Object.keys(tempFormErrors).length) {
     console.log('单独校验未通过', formErrors)
   } else {
     console.log('单独校验通过')
     delete formErrors[tempName]
   }
-  if (formErrors) {
+  if (Object.keys(formErrors).length) {
     console.log('整体校验未通过', formErrors)
   } else {
     console.log('整体校验通过')

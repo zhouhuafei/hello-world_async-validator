@@ -9,7 +9,7 @@ export async function validateAllFormFields (formFields, formRules, option: Vali
   option.firstFields = option.firstFields || true // 开启后，若某个字段的某个规则校验没通过，则停止下一个规则的校验，而后继续下一个字段的校验。
   return await new Schema(formRules)
     .validate(formFields, option)
-    .then(() => undefined)
+    .then(() => ({}))
     .catch((err) => err.errors.reduce((c, v) => {
       return { ...c, [v.field]: v.message }
     }, {}))
